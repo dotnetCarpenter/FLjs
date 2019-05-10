@@ -1,8 +1,15 @@
 'use strict'
 
+const { trigram, middledot } = require('./constants')
+
 let l = console.log
 
-l( "def second = s1 \u00b7 tl" )
+l( `def second ${trigram} s1 ${middledot} tl` )
+l( "second:(2,3,4)" )
+
+let second = compose(s1, tl)
+let result = second(2,3,4)
+l( result )
 
 function compose (f1, f2) {
   return (a, b) => {
