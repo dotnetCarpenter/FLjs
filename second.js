@@ -7,6 +7,7 @@ let l = console.log
 l( `def second ${trigram} s1 ${middledot} tl` )
 l( "second:(2,3,4)" )
 
+let s1 = s(0)
 let second = compose(s1, tl)
 let result = second(2,3,4) // -> 3
 l( result )
@@ -17,9 +18,8 @@ function compose (f1, f2) {
   }
 }
 
-function s1(s1, ...seq) {
-l('s1', s1)
-  return s1
+function s (ith) {
+  return (...seq) => seq[ith]
 }
 
 function tl (_, ...seq) {
