@@ -1,5 +1,7 @@
 'use strict'
 
+let l = console.log
+
 l( "def SumAndProd = [+,*]" )
 l( "SumAndProd(2,3)" )
 
@@ -25,7 +27,3 @@ function mul (a, b) {
   return add(a, mul(a, b - 1))
 }
 
-
-function l (...msg) {
-  console.log.apply(console, msg)
-}
