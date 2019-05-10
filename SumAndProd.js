@@ -7,11 +7,11 @@ let l = console.log
 l( `def SumAndProd ${trigram} [+,*]` )
 l( "SumAndProd(2,3)" )
 
-let SumAndProd = compose(add,mul)
+let SumAndProd = construction(add,mul)
 let result = SumAndProd(2,3) // -> [5,6]
 l( result )
 
-function compose (f1, f2) {
+function construction (f1, f2) {
   return (a, b) => {
     return [f1(a, b), f2(a, b)]
   }
