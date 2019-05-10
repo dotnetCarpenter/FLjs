@@ -8,7 +8,6 @@ let result = SumAndProd(2,3) // -> [5,6]
 l( result )
 
 function compose (f1, f2) {
-  let result = []
   return (a, b) => {
     return [f1(a, b), f2(a, b)]
   }
