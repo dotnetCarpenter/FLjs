@@ -5,7 +5,7 @@ const { trigram } = require('./constants')
 let l = console.log
 
 l( `def SumAndProd ${trigram} [+,*]` )
-l( "SumAndProd(2,3)" )
+l( "SumAndProd:(2,3)" )
 
 // main
 let SumAndProd = construction(add,mul)
