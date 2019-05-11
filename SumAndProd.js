@@ -1,7 +1,6 @@
 'use strict'
 
 const { trigram } = require('./constants')
-
 let l = console.log
 
 l( `def SumAndProd ${trigram} [+,*]` )
