@@ -7,12 +7,6 @@ l( `def fact ${trigram} id = ~0 -> ~1;id * (fact ${middledot} sub1)` )
 l( "fact:5 -> 120" )
 
 // main
-// let conditional = f => id(x => x === 0 ? 1 : f)
-// let fact = id(x => x === 0 ? 1 : construction(mul, compose(fact, sub1))(x))
-// let _fact
-// let fact = y => y === 0 ? [1] : _fact(y)
-// _fact = compose(mul, compose(fact, sub1))
-
 let _fact
 let fact = x => x === 0 ? [1] : mul(x, _fact(x))
 _fact = compose(fact, sub1) // fact:5 -> fact:4 -> etc.
@@ -24,10 +18,6 @@ function compose (...f) {
   return (...args) => {
     return f.reduceRight((accu, f) => f(...accu), args) // f1(...f2(...args))
   }
-}
-
-function construction (...f) {
-  return (...args) => f.map(f => f(...args))
 }
 
 function mul (...numbers) {
