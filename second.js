@@ -1,7 +1,6 @@
 'use strict'
 
 const { trigram, middledot } = require('./constants')
-
 let l = console.log
 
 l( `def second ${trigram} s1 ${middledot} tl` )
