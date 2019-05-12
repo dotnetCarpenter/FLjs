@@ -10,3 +10,4 @@ node explicitFact.js
 echo ""
 node implicitFact.js
 echo ""
+node lengthOfSequence.js
