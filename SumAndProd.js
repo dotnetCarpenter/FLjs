@@ -26,4 +26,3 @@ function mul (a, b) {
 
   return add(a, mul(a, b - 1))
 }
-
