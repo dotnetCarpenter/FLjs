@@ -1,18 +1,22 @@
 'use strict'
 
-const { smalltilde, middledot, alpha } = require('./constants')
+const { smalltilde } = require('./constants')
 let l = console.log
 
-l( `+ ${middledot} ${alpha}:${smalltilde}1` )
-l( `(+ ${middledot} ${alpha}:${smalltilde}1):(a,b,c) -> 3` )
+l( `+ ο α:${smalltilde}1` )
+l( `(+ ο α:${smalltilde}1):(a,b,c) -> 3` )
 
 // main
-let lengthOfSeq = compose(add, (...a) => a.map(constant(1)))
+let lengthOfSeq = ο(add, α(constant(1)))
 let result = lengthOfSeq('a','b','c') // -> 3
 l( result )
 
 function constant (c) {
   return () => c
+}
+
+function α (f) {
+  return (...seq) => seq.map(f)
 }
 
 function add (a, b, ...n) {
@@ -21,7 +25,7 @@ function add (a, b, ...n) {
   return add(a + b, ...n)
 }
 
-function compose (...f) {
+function ο (...f) {
   return (...args) => {
     return f.reduceRight((accu, f) => f(...accu), args) // f1(...f2(...args))
   }
