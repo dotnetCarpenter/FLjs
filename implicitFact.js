@@ -8,7 +8,7 @@ l( "fact:5 -> 120" )
 
 // main
 let fact = compose(mul, intsto)
-let result = fact() // -> 120
+let result = fact(5) // -> 120
 l( ...result )
 
 function compose (...f) {
@@ -25,9 +25,19 @@ function mul (...numbers) {
 
 function intsto (to) {
   let ret = []
-  
+  return to > 0 ? posIntsto(to, ret) : negIntsto(to, ret)
+}
+
+function posIntsto(to, ret) { 
   while (to > 0) 
     ret.unshift(to--)
+  
+  return ret
+}
+
+function negIntsto(to, ret) {
+  while (to < 0) 
+    ret.unshift(to++)
   
   return ret
 }
