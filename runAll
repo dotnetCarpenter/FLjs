@@ -1,0 +1,12 @@
+#!/bin/bash
+
+node lamdaCalculusSumAndProd.js
+echo ""
+node SumAndProd.js
+echo ""
+node second.js
+echo ""
+node explicitFact.js
+echo ""
+node implicitFact.js
+echo ""
