@@ -8,7 +8,7 @@ l( "fact:5 -> 120" )
 
 // main
 let fact = compose(mul, intsto)
-let result = fact(5) // -> 120
+let result = fact() // -> 120
 l( ...result )
 
 function compose (...f) {
