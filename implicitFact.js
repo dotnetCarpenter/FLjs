@@ -3,13 +3,13 @@
 const { trigram, middledot } = require('./constants')
 let l = console.log
 
-l( `def fact ${trigram} ~0 -> ~1;id * (fact ${middledot} sub1)` )
-l( "fact:5" )
+l( `def fact ${trigram} * ${middledot} intsto` )
+l( "fact:5 -> 120" )
 
 // main
 let fact = compose(mul, intsto)
-let result = fact(5)
-l( result )
+let result = fact(5) // -> 120
+l( ...result )
 
 function compose (...f) {
   return (...args) => {
@@ -18,9 +18,9 @@ function compose (...f) {
 }
 
 function mul (...numbers) {
-  if (numbers.length === 0) return 1
+  if (numbers.length === 0) return [1]
 
-  return numbers.reduce((accu, n) => accu * n)
+  return [numbers.reduce((accu, n) => accu * n)]
 }
 
 function intsto (to) {
