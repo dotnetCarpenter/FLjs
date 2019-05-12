@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "nodejs `node -v`"
+echo ""
+
 node lamdaCalculusSumAndProd.js
 echo ""
 node SumAndProd.js

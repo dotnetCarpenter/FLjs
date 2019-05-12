@@ -7,12 +7,15 @@ l( `+ ${middledot} ${alpha}:${smalltilde}1` )
 l( `(+ ${middledot} ${alpha}:${smalltilde}1):(a,b,c) -> 3` )
 
 // main
-let lengthOfSeq = compose(add, (...a) => a.map(_ => 1))
+let lengthOfSeq = compose(add, (...a) => a.map(constant(1)))
 let result = lengthOfSeq('a','b','c') // -> 3
 l( result )
 
+function constant (c) {
+  return () => c
+}
+
 function add (a, b, ...n) {
-  l('add', a, b, n)
   if (b == null) return a
 
   return add(a + b, ...n)

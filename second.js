@@ -19,7 +19,7 @@ function compose (...f) {
 }
 
 /**
- * Returns a function that returns the ith element of a sequence
+ * Selects the ith element of a sequence
  * @param {number|string} ith index or key
  * @returns {function}
  */
@@ -32,10 +32,10 @@ function s (ith) {
 }
 
 /**
- * 
- * @param {any} _ ignored
- * @param  {...any} seq
- * @returns {[]any} seq
+ * Returns all but the first element of a sequence
+ * @param {any} _ ignored element
+ * @param  {...any} seq Sequence of elements
+ * @returns {[]any} All arguments but the first element
  */
 function tl (_, ...seq) {
   return seq

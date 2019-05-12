@@ -1,16 +1,15 @@
 'use strict'
 
-const { trigram, middledot } = require('./constants')
+const { trigram, smalltilde, middledot } = require('./constants')
 let l = console.log
 
-l( `def fact ${trigram} id = ~0 -> ~1;id * (fact ${middledot} sub1)` )
+l( `def fact ${trigram} id = ${smalltilde}0 -> ${smalltilde}1;id * (fact ${middledot} sub1)` )
 l( "fact:5 -> 120" )
 
 // main
 let _fact
 let fact = x => x === 0 ? [1] : mul(x, _fact(x))
 _fact = compose(fact, sub1) // fact:5 -> fact:4 -> etc.
-
 let result = fact(5)
 l( ...result )
 
